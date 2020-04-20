@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE generatorConfiguration  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- mybatis-generator:generate -->
+    <context id="mysql" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <!-- ???????????true:?;false:?-->
+            <!--            <property name="suppressDate" value="true"/>-->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--????????????????????????-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/project_crowd"
+                        userId="root"
+                        password="root">
+        </jdbcConnection>
+
+        <!-- ??false??JDBC DECIMAL ?NUMERIC ?????Integer??true ?? JDBC DECIMAL
+        ?NUMERIC ?????java.math.BigDecimal -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- targetProject:??Entity ????-->
+        <!-- ??javaBean?????
+           targetPackage???????????????enableSubPackages?????
+           targetProject???????????????????????????????????????MBG???????
+        -->
+        <javaModelGenerator targetProject=".\src\main\java" targetPackage="com.atguigu.crowd.entity">
+            <!-- enableSubPackages:???schema ??????-->
+            <property name="enableSubPackages" value="false"/>
+            <!-- ????????????????-->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- targetProject:XxxMapper.xml ?????????-->
+        <sqlMapGenerator targetProject=".\src\main\java"
+                         targetPackage="com.atguigu.crowd.mapper">
+            <!-- enableSubPackages:???schema ??????-->
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!-- targetPackage?Mapper ???????-->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetProject=".\src\main\java"
+                             targetPackage="com.atguigu.crowd.mapper">
+            <!-- enableSubPackages:???schema ??????-->
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <!-- ??????????entity ????????-->
+        <table tableName="t_admin" domainObjectName="Admin"/>
+    </context>
+</generatorConfiguration>
