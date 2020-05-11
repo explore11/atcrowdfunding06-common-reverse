@@ -11,9 +11,9 @@
         </commentGenerator>
         <!--????????????????????????-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/project_crowd"
-                        userId="root"
-                        password="root">
+                        connectionURL="jdbc:mysql://182.92.241.248:3306/project_crowd"
+                        userId="user"
+                        password="Songwenqu123,">
         </jdbcConnection>
 
         <!-- ??false??JDBC DECIMAL ?NUMERIC ?????Integer??true ?? JDBC DECIMAL
@@ -52,4 +52,7 @@
         <!-- ??????????entity ????????-->
         <table tableName="t_admin" domainObjectName="Admin"/>
     </context>
+
+
+    <!--????????? http://mybatis.org/generator/configreference/xmlconfig.html -->
 </generatorConfiguration>
