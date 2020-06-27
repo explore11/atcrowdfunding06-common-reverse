@@ -50,7 +50,7 @@
         </javaClientGenerator>
 
         <!-- ??????????entity ????????-->
-        <table tableName="t_admin" domainObjectName="Admin"/>
+        <table tableName="t_role" domainObjectName="Role"/>
     </context>
 
 
